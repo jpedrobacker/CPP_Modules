@@ -6,7 +6,14 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:03 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/09/30 09:55:04 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:39:29 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
+
+class phonebook
+{
+	public:
+		void	myMethod();
+} ;
