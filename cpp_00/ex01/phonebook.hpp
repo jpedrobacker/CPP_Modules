@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:03 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/03 21:53:21 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/07 14:53:39 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,27 @@
 class Contact
 {
 	private:
-		int			index;
 		std::string	name;
 		std::string	last_name;
 		std::string	nickname;
 		std::string	phone_num;
 		std::string	darkest_secret;
 	public:
-		//adds the rest of methods and general info
-
+		void	create_contact(void);
+		void	delete_contact(void);
+		int	index;
 } ;
 
 class PhoneBook
 {
 	private:
-		//all contacts should be private
-		Contact		contact[8];
-		int			index;
+		Contact	contact[8];
+		int		num_contacts;
+		int		index;
 	public:
-		void		add_num();
-		void		search_num();
+		PhoneBook();
+		~PhoneBook();
+		void	add_num(void);
+		void	search_num(void);
+		void	show_instructions(void);
 } ;
