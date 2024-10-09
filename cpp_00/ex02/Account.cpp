@@ -6,7 +6,13 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:22 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/09/30 09:55:23 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:09:55 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "inc/Account.hpp"
+
+int main (void)
+{
+	
+}
