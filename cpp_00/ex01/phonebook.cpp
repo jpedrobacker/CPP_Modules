@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:00 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/08 18:29:46 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:41:55 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,6 @@ PhoneBook::PhoneBook()
 }
 
 PhoneBook::~PhoneBook() {}
-
-/*void	Phonebook::print_contact(void)
-{
-	std::cout << "first name: " << this->first_name << std::endl;
-	std::cout << "last name: " << this->last_name << std::endl;
-	std::cout << "nickname: " << this->nickname << std::endl;
-	std::cout << "phone number: " << this->phone_num << std::endl;
-	std::cout << "darkest secret: " << this->darkest_secret << std::endl;
-}*/
-
-void	PhoneBook::print_cur_contact()
-{
-
-}
 
 void	PhoneBook::print_contacts(void)
 {
@@ -103,5 +89,39 @@ void	PhoneBook::add_contact(void)
 
 void	PhoneBook::search_contact(void)
 {
-	std::cout << "TEST SEARCH" << std::endl;
+	std::string	to_find_index;
+
+	std::cout << "Enter contact to search: ";
+	std::cin >> to_find_index;
+	int	f_index = atoi(to_find_index.c_str());
+
+	for (int x = 0; x <= this->num_contacts; ++x)
+	{
+		if (x == f_index - 1)
+		{
+			std::cout << "-------------------------------------------------------------" << std::endl;
+			std::cout << "| index | first name | last  name |  nickname  |  phone num |" << std::endl;
+			std::cout << "|-----------------------------------------------------------|" << std::endl;
+			std::cout << "|   " << x << "   | ";
+			if (this->contact[x].get_first_name().length() > 10)
+				std::cout << this->contact[x].get_first_name().substr(0, 9) << "." << " | ";
+			else
+				std::cout << std::setw(10) << this->contact[x].get_first_name() << " | ";
+			if (this->contact[x].get_last_name().length() > 10)
+				std::cout << this->contact[x].get_last_name().substr(0, 9) << "." << " | ";
+			else
+				std::cout << std::setw(10) << this->contact[x].get_last_name() << " | ";
+			if (this->contact[x].get_nickname().length() > 10)
+				std::cout << this->contact[x].get_nickname().substr(0, 9) << "." << " | ";
+			else
+				std::cout << std::setw(10) << this->contact[x].get_nickname() << " | ";
+			if (this->contact[x].get_phone_num().length() > 10)
+				std::cout << this->contact[x].get_phone_num().substr(0, 9) << "." << " |";
+			else
+				std::cout << std::setw(10) << this->contact[x].get_phone_num() << " |";
+			std::cout << std::endl;
+			std::cout << "-------------------------------------------------------------" << std::endl;
+		}
+
+	}
 }

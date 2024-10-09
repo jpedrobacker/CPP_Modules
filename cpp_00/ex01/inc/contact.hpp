@@ -6,11 +6,13 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:15 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/08 17:44:42 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:21:14 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
 
 class Contact
 {
