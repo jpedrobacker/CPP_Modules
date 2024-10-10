@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:03 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/08 18:05:58 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:01:02 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 class PhoneBook
 {
 	private:
-		Contact	contact[8];
-		int		num_contacts;
-		int		index;
+		Contact	_contact[8];
+		int		_num_contacts;
+		int		_index;
 	public:
 		PhoneBook();
 		~PhoneBook();

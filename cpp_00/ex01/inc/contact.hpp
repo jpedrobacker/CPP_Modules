@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:15 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/09 11:21:14 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/10 10:56:19 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class Contact
 {
 	private:
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	phone_num;
-		std::string	darkest_secret;
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_num;
+		std::string	_darkest_secret;
 	public:
 		Contact();
 		~Contact();
