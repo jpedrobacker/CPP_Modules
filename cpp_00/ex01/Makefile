@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = PhoneBook
 
 CC = c++
 
@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME):
-		$(CC) $(CFLAGS) phonebook.cpp contact.cpp main.cpp -o $(NAME)
+		$(CC) $(CFLAGS) PhoneBook.cpp Contact.cpp main.cpp -o $(NAME)
 
 clean:
 	rm -rf $(NAME)

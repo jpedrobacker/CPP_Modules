@@ -6,11 +6,11 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:00 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/10 11:02:07 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/14 10:51:48 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/phonebook.hpp"
+#include "inc/PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -25,7 +25,7 @@ void	PhoneBook::print_contacts(void)
 	std::cout << "-------------------------------------------------------------" << std::endl;
 	std::cout << "| index | first name | last  name |  nickname  |  phone num |" << std::endl;
 	std::cout << "|-----------------------------------------------------------|" << std::endl;
-	for (int i = 0; i < this->num_contacts; i++)
+	for (int i = 0; i < this->_num_contacts; i++)
 	{
 		std::cout << "|   " << i + 1 << "   | ";
 		if (this->_contact[i].get_first_name().length() > 10)
@@ -59,32 +59,32 @@ void PhoneBook::create_contact()
 
 	std::cout << "Enter contact first name: ";
 	std::cin >> first_name;
-	this->_contact[this->index].set_first_name(first_name);
+	this->_contact[this->_index].set_first_name(first_name);
 	std::cout << "Enter contact last name: ";
 	std::cin >> last_name;
-	this->_contact[this->index].set_last_name(last_name);
+	this->_contact[this->_index].set_last_name(last_name);
 	std::cout << "Enter a nickname for the contact: ";
 	std::cin >> nickname;
-	this->_contact[this->index].set_nickname(nickname);
+	this->_contact[this->_index].set_nickname(nickname);
 	std::cout << "Enter contact Phone number: ";
 	std::cin >> phone_num;
-	this->_contact[this->index].set_phone_num(phone_num);
+	this->_contact[this->_index].set_phone_num(phone_num);
 	std::cout << "Enter contact darkest secret: ";
 	std::cin >> darkest_secret;
-	this->_contact[this->index].set_darkest_secret(darkest_secret);
+	this->_contact[this->_index].set_darkest_secret(darkest_secret);
 }
 
 void	PhoneBook::add_contact(void)
 {
-	if (this->index == 8)
-		this->index = 0;
-	if (this->index < 8)
+	if (this->_index == 8)
+		this->_index = 0;
+	if (this->_index < 8)
 	{
 		this->create_contact();
-		this->index++;
+		this->_index++;
 	}
-	if (this->num_contacts < 8)
-		this->num_contacts++;
+	if (this->_num_contacts < 8)
+		this->_num_contacts++;
 }
 
 void	PhoneBook::search_contact(void)
@@ -95,7 +95,7 @@ void	PhoneBook::search_contact(void)
 	std::cin >> to_find_index;
 	int	f_index = atoi(to_find_index.c_str());
 
-	for (int x = 0; x <= this->num_contacts; ++x)
+	for (int x = 0; x <= this->_num_contacts; ++x)
 	{
 		if (x == f_index - 1)
 		{

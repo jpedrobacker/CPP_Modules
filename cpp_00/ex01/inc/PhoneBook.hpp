@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:03 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/10 11:01:02 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/14 10:50:30 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
-# include "contact.hpp"
+# include "Contact.hpp"
 
 class PhoneBook
 {
