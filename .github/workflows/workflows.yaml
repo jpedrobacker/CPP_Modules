@@ -17,4 +17,4 @@ jobs:
       - name: Run cpp tests
         run: |
           make -C cpp_01/ex00
-          ./Zombie
+          ./cpp_01/ex00/Zombie
