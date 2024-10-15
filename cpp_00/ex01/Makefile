@@ -7,7 +7,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME):
-		$(CC) $(CFLAGS) phoneBook.cpp contact.cpp main.cpp -o $(NAME)
+		$(CC) $(CFLAGS) phonebook.cpp contact.cpp main.cpp -o $(NAME)
 
 clean:
 	rm -rf $(NAME)
