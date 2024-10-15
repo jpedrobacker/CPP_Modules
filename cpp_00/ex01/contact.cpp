@@ -6,11 +6,11 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:21:02 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/15 14:04:50 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:07:34 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/contact.hpp"
+#include "contact.hpp"
 
 Contact::Contact() {}
 
