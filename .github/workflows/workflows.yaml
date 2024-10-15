@@ -20,7 +20,7 @@ jobs:
           ./cpp_00/ex00/megaphone
           ./cpp_00/ex00/megaphone "teste_1"
           make -C cpp_00/ex01
-          ./cpp_00/ex01/phonebook
-          EXIT
+          make -C cpp_00/ex02
+          ./cpp_00/ex02/account
           make -C cpp_01/ex00
           ./cpp_01/ex00/Zombie
