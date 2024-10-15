@@ -6,11 +6,11 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:49:34 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/14 10:50:46 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:04:55 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/PhoneBook.hpp"
+#include "inc/phonebook.hpp"
 
 void	PhoneBook::show_instructions(void)
 {
