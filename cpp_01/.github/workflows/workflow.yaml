@@ -1,0 +1,20 @@
+name: Continuous Integration
+
+on: push
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install cpp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc clang
+
+      - name: Run cpp tests
+        run: |
+          make -C ex00
+          ./Zombie
