@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:52:40 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/14 15:56:44 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/18 00:19:10 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Zombie
 		~Zombie();
 		static Zombie*	zombieHorde(int n, std::string name);
 		void			announce(void) const;
+		void			setName(std::string name);
 };
 
 

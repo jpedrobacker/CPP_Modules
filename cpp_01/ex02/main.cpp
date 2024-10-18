@@ -5,23 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:54:33 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/18 01:04:09 by jbergfel         ###   ########.fr       */
+/*   Created: 2024/10/18 00:26:46 by jbergfel          #+#    #+#             */
+/*   Updated: 2024/10/18 00:34:45 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main(void)
 {
-	int	n = 4;
-	Zombie	*zombieHorde = Zombie::zombieHorde(n, "Joao");
 
-	zombieHorde[2].setName("Pedro");
-	zombieHorde[0].setName("Backer");
+	std::string brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
 
-	for (int i = 0; i < 4; i++)
-		zombieHorde[i].announce();
-	delete [] zombieHorde;
+	std::cout << "Brain address: " << &brain << std::endl;
+	std::cout << "stringPTR address: " << stringPTR << std::endl;
+	std::cout << "stringREF address: " << &stringREF << std::endl;
+
+	std::cout << "Brain value: " << brain << std::endl;
+	std::cout << "stringPTR value: " << *stringPTR << std::endl;
+	std::cout << "stringREF value: " << stringREF << std::endl;
 	return (0);
 }

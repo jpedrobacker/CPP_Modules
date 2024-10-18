@@ -24,3 +24,7 @@ jobs:
           ./cpp_00/ex02/account
           make -C cpp_01/ex00
           ./cpp_01/ex00/Zombie
+          make -C cpp_01/ex01
+          ./cpp_01/ex01/zombieHorde
+          make -C cpp_01/ex02
+          ./cpp_01/ex02/brain
