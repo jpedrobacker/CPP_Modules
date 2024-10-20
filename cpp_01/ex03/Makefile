@@ -1,4 +1,4 @@
-NAME = brain
+NAME = unViolence
 
 CC = c++
 
