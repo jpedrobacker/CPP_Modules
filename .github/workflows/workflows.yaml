@@ -30,3 +30,5 @@ jobs:
           ./cpp_01/ex02/brain
           make -C cpp_01/ex03
           ./cpp_01/ex03/unViolence
+          make -C cpp_01/ex04
+          make -C cpp_01/ex05

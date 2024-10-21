@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 00:39:33 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/20 15:04:49 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:56:56 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include "Weapon.cpp"
+#include "Weapon.hpp"
 
 class HumanB
 {
