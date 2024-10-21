@@ -31,7 +31,7 @@ jobs:
           make -C cpp_01/ex03
           ./cpp_01/ex03/unViolence
           make -C cpp_01/ex04
-          ./cpp_01/ex04/replace "l" "p"
+          ./cpp_01/ex04/replace "test.txt" "l" "p"
           echo test.txt.replace
           make -C cpp_01/ex05
           ./cpp_01/ex05/harl
