@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 11:42:50 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/21 16:19:23 by jbergfel         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:25 by jbergfel          #+#    #+#             */
+/*   Updated: 2024/10/21 16:31:37 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <string>
-
-class Harl
+int main(int ac, char **av)
 {
-	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
+	Harl	harl;
 
-	public:
-		Harl();
-		~Harl();
-		void	complain(std::string level);
-};
-
-#endif
+	if (ac != 2)
+		return (std::cout << "Usage: ./harlFilter [DEBUG|INFO|WARNING|ERROR]" << std::endl, 1);
+	harl.complain(av[1]);
+	return (0);
+}

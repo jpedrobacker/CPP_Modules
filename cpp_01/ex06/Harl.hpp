@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 11:42:50 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/21 16:19:23 by jbergfel         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:20 by jbergfel          #+#    #+#             */
+/*   Updated: 2024/10/21 16:20:59 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
+#ifndef	HARL_HPP
 #define HARL_HPP
 
 #include <iostream>

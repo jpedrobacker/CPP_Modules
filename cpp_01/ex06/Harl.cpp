@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 11:42:36 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/21 16:20:10 by jbergfel         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:22 by jbergfel          #+#    #+#             */
+/*   Updated: 2024/10/21 16:37:26 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,35 +20,58 @@ Harl::~Harl()
 
 void Harl::debug(void)
 {
+	std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
+	std::cout << std::endl;
 }
 
 void Harl::info(void)
 {
+	std::cout << "[ INFO ]" << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << std::endl;
 }
 
 void Harl::warning(void)
 {
+	std::cout << "[ WARNING ]" << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << std::endl;
 }
 
 void Harl::error(void)
 {
+	std::cout << "[ ERROR ]" << std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << std::endl;
 }
 
 void Harl::complain(std::string level)
 {
-	void (Harl::*complain[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	for (int i = 0; i < 4; i++)
+	int	i = 0;
+	std::string levels[] = {"ERROR", "WARNING", "INFO", "DEBUG"};
+
+	while (i < 4 && levels[i] != level)
+		i++;
+	while (i >= 0)
 	{
-		if (levels[i] == level)
+		switch (i--)
 		{
-			(this->*complain[i])();
-			return ;
+			case 0:
+				this->error();
+				break;
+			case 1:
+				this->warning();
+				break;
+			case 2:
+				this->info();
+				break;
+			case 3:
+				this->debug();
+				break;
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+				return;
 		}
 	}
-	std::cout << "Invalid complaint level." << std::endl;
 }
