@@ -40,8 +40,8 @@ jobs:
           ./cpp_01/ex06/harlFilter "WARNING"
           ./cpp_01/ex06/harlFilter "DEBUG"
             make -C cpp_02/ex00
-            ./cpp_02/ex00/Fixed
+            ./cpp_02/ex00/fixed
             make -C cpp_02/ex01
-            ./cpp_02/ex01/Fixed
+            ./cpp_02/ex01/fixed
             make -C cpp_02/ex02
-            ./cpp_02/ex02/Fixed
+            ./cpp_02/ex02/fixed
