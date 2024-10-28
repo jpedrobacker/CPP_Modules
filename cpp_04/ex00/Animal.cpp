@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 16:03:34 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/23 16:33:02 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:37:06 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,35 @@
 
 Animal::Animal()
 {
-	_type = "Uknown";
+	this->_type = "Animal";
+	std::cout << "Default Animal Constuctor!" << std::endl;
 }
 
-Animal::Animal(std::string type)
+Animal::Animal(const Animal &an)
 {
-	_type = type;
+	_type = an.getType();
+	std::cout << "Animal copy Constuctor!" << std::endl;
+}
+
+Animal &Animal::operator=(const Animal &an)
+{
+	if (this != &an)
+		this->_type = an.getType();
+	std::cout << "Animal copy assignment constructor" << std::endl;
+	return (*this);
 }
 
 Animal::~Animal()
-{}
-
-void	Animal::setType(std::string type)
 {
-	_type = type;
+	std::cout << "Animal destructor" << std::endl;
 }
 
-std::string	Animal::getType()
+void	Animal::makeSound(void) const
 {
-	return (_type);
+	std::cout << "Animal sound!" << std::endl;
+}
+
+std::string	Animal::getType(void) const
+{
+	return (this->_type);
 }

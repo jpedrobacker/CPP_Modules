@@ -51,3 +51,5 @@ jobs:
           ./cpp_03/ex01/scavTrap
           make -C cpp_03/ex02
           ./cpp_03/ex02/fragTrap
+          make -C cpp_04/ex00
+          ./cpp_04/ex00/animals
