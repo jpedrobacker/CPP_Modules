@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 09:55:03 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/15 14:05:01 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:06:53 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ class PhoneBook
 {
 	private:
 		Contact	_contact[8];
-		int		_num_contacts;
+		int		_numContacts;
 		int		_index;
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void	show_instructions(void);
-		void	add_contact(void);
-		void	create_contact(void);
-		void	search_contact(void);
-		void	print_contacts(void);
-		void	print_cur_contact(void);
-		void	print_contact(void);
+		void	showInstructions(void);
+		void	addContact(void);
+		void	createContact(void);
+		void	searchContact(void);
+		void	printContacts(void);
+		void	printCurContact(void);
+		void	printContact(void);
 } ;
 
 #endif

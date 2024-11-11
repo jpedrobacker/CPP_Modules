@@ -6,13 +6,13 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:49:34 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/15 14:07:29 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:19:11 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void	PhoneBook::show_instructions(void)
+void	PhoneBook::showInstructions(void)
 {
 	std::cout << "Enter yout command [ADD, SEARCH, PRINT, EXIT]: ";
 }
@@ -24,16 +24,16 @@ int main(void)
 
 	while (1)
 	{
-		book.show_instructions();
+		book.showInstructions();
 		std::cin >> input;
 		if (input == "EXIT")
 			break;
 		else if (input == "ADD")
-			book.add_contact();
+			book.addContact();
 		else if (input == "SEARCH")
-			book.search_contact();
+			book.searchContact();
 		else if (input == "PRINT")
-			book.print_contacts();
+			book.printContacts();
 	}
 	return (0);
 }
