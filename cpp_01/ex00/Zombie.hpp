@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:09:39 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/14 15:54:13 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:21:04 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Zombie
 
 	public:
 		Zombie();
+		Zombie(std::string name);
 		~Zombie();
 		static Zombie*	newZombie(std::string name);
 		static void		randomChump(std::string name);
