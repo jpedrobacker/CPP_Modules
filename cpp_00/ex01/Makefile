@@ -2,7 +2,7 @@ NAME = phonebook
 
 CC = g++
 
-CFLAGS = -Wall -Wextra -Werror -std=g++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
