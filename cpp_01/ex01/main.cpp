@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:54:33 by jbergfel          #+#    #+#             */
-/*   Updated: 2024/10/18 01:04:09 by jbergfel         ###   ########.fr       */
+/*   Updated: 2024/12/05 11:22:20 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,25 @@
 
 int main(void)
 {
-	int	n = 4;
+	int	n = 5;
 	Zombie	*zombieHorde = Zombie::zombieHorde(n, "Joao");
 
-	zombieHorde[2].setName("Pedro");
-	zombieHorde[0].setName("Backer");
-
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < n; i++)
 		zombieHorde[i].announce();
+
+	std::cout << std::endl;
+
+	zombieHorde[1].setName("Pedro");
+	zombieHorde[2].setName("Bergfeld");
+	zombieHorde[3].setName("Backer");
+	zombieHorde[4].setName("Lopes");
+
+
+	for (int i = 0; i < n; i++)
+		zombieHorde[i].announce();
+
+	std::cout << std::endl;
+
 	delete [] zombieHorde;
 	return (0);
 }
