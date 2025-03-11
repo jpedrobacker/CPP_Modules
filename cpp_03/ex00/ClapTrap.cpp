@@ -41,7 +41,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &clap)
 		_hitPoints = clap._hitPoints;
 		_energyPoints = clap._energyPoints;
 		_attackDamage = clap._attackDamage;
-		//std::cout << "Called copy assignment ClapTrap" << std::endl;
+		std::cout << "Called copy assignment ClapTrap" << std::endl;
 	}
 	return (*this);
 }
@@ -92,8 +92,8 @@ void	ClapTrap::beRepaired(int amount)
 		return ;
 	}
 	_hitPoints += amount;
-	_energyPoints--;
 	std::cout << "Claptrap: " << _name << " is repaired for " << amount << " hitpoints!" << std::endl;
+	_energyPoints--;
 }
 
 std::string	ClapTrap::getName() const
