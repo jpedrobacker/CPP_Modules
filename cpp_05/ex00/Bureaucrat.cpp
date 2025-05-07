@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:42 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/06 14:36:21 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:57:42 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat: " << this->_name << " destroyed!" << std::endl;
+	//std::cout << "Bureaucrat: " << this->_name << " destroyed!" << std::endl;
 }
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(50)
@@ -53,6 +53,16 @@ void	Bureaucrat::setGrade(int grade)
 		throw (GradeTooLowException());
 	this->_grade = grade;
 	std::cout << "Bureaucrat: " << this->_name << " altered grade to: " << this->_grade << std::endl;
+}
+
+void	Bureaucrat::incrementGrade(int increment)
+{
+	setGrade(this->getGrade() - increment);
+}
+
+void	Bureaucrat::decrementGrade(int decrement)
+{
+	setGrade(this->getGrade() + decrement);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

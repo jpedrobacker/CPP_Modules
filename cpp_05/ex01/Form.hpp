@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 08:58:26 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/06 14:34:43 by jbergfel         ###   ########.fr       */
+/*   Created: 2025/05/07 12:51:29 by jbergfel          #+#    #+#             */
+/*   Updated: 2025/05/07 13:31:33 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
-# include <string>
-# include <stdexcept>
+# include <stdio.h>
+# include <exception>
+# include "Bureaucrat.hpp"
 
-class Bureaucrat
+class Form
 {
 	private:
 		const std::string	_name;
-		int					_grade;
+		bool				_signed;
+		const int			_gradeToSign;
+		const int			_gradeToExecute;
 
 	public:
-		~Bureaucrat();
-		Bureaucrat();
-		Bureaucrat(const std::string &name, int grade);
-		Bureaucrat(const Bureaucrat &src);
-		Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &bu);
+		~Form();
+		Form();
 
-		void		setGrade(int grade);
+		void	beSigned(Bureaucrat &src);
+
 		std::string	getName() const;
-		int			getGrade() const;
+		bool		getSigned();
+		int	getGradeToSign() const;
+		int	getGradeToExecute() const;
 
 		class GradeTooHighException : public std::exception
 		{
