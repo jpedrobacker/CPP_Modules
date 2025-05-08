@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/07 13:31:33 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/08 18:41:39 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define FORM_HPP
 
 # include <iostream>
-# include <stdio.h>
-# include <exception>
+# include <string>
+# include <stdexcept>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -29,11 +31,14 @@ class Form
 	public:
 		~Form();
 		Form();
+		Form(std::string name, int gradeToSign, int gradeToExec);
+		Form(const Form &src);
+		Form	&operator=(const Form &src);
 
 		void	beSigned(Bureaucrat &src);
 
 		std::string	getName() const;
-		bool		getSigned();
+		bool		getSigned() const;
 		int	getGradeToSign() const;
 		int	getGradeToExecute() const;
 
@@ -48,5 +53,7 @@ class Form
 				virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &os, Form const &rhs);
 
 #endif
