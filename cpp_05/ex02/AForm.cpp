@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:32 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 13:51:29 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/12 16:03:49 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _name(name), 
 {
 	this->_signed = false;
 	if (gradeToSign < 1 || gradeToExec < 1)
-		throw (AForm::GradeTooHighException());
+	throw (AForm::GradeTooHighException());
 	if (gradeToSign > 150 || gradeToExec > 150)
-		throw (AForm::GradeTooLowException());
+	throw (AForm::GradeTooLowException());
 }
 
 AForm::AForm(const AForm &src) : _name(src.getName()), _signed(src.getSigned()), _gradeToSign(src.getGradeToSign()), _gradeToExecute(src.getGradeToExecute())
@@ -55,7 +55,7 @@ void	AForm::execute(const Bureaucrat &executor) const
 {
 	if (!this->getSigned())
 		throw (AForm::SignedAlready());
-	if (executor.getGrade() < this->getGradeToExecute())
+	if (executor.getGrade() > this->getGradeToExecute())
 		throw (AForm::GradeTooLowException());
 }
 

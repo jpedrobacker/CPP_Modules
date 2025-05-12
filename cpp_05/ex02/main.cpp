@@ -6,17 +6,21 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 13:03:45 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:50:36 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
-	int	intinput;
-	std::string	sinput;
+	int intinput;
+	std::string sinput;
+	int form_choice;
 
 	try
 	{
@@ -24,13 +28,38 @@ int main(void)
 		std::cin >> sinput;
 		std::cout << "What's your last grade?: ";
 		std::cin >> intinput;
-		Bureaucrat	*n_b = new Bureaucrat(sinput, intinput);
-		AForm		n_form("new Form", 40, 30);
+		Bureaucrat *n_b = new Bureaucrat(sinput, intinput);
+
+		std::cout << "Choose a form to create:\n";
+		std::cout << "1. Presidential Pardon Form\n";
+		std::cout << "2. Robotomy Request Form\n";
+		std::cout << "3. Shrubbery Creation Form\n";
+		std::cout << "Enter your choice (1-3): ";
+		std::cin >> form_choice;
+
+		AForm *n_form = NULL;
+		switch (form_choice)
+		{
+			case 1:
+				n_form = new PresidentialPardonForm("Target_Presidential");
+				break;
+			case 2:
+				n_form = new RobotomyRequestForm("Target_Robotomy");
+				break;
+			case 3:
+				n_form = new ShrubberyCreationForm("Target_Shrubbery");
+				break;
+			default:
+				std::cout << "Invalid choice, using generic form.\n";
+				n_form = new AForm("new Form", 40, 30);
+				break;
+		}
 
 		std::cout << "grade: " << n_b->getGrade() << std::endl;
-		n_b->decrementGrade(5);
+		n_b->signForm(*n_form);
+		n_form->execute(*n_b);
 
-		n_b->signForm(n_form);
+		delete n_form;
 		delete n_b;
 	}
 	catch (const std::exception &e)

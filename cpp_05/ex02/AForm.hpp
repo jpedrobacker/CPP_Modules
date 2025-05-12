@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 13:51:36 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:42:10 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm
 		const int			_gradeToExecute;
 
 	public:
-		~AForm();
+		virtual ~AForm();
 		AForm();
 		AForm(std::string name, int gradeToSign, int gradeToExec);
 		AForm(const AForm &src);
