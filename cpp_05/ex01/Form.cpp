@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:32 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/08 18:27:37 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:45:09 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Form	&Form::operator=(const Form &src)
 	return (*this);
 }
 
-void	Form::beSigned(Bureaucrat &src)
+void	Form::beSigned(const Bureaucrat &src)
 {
 	if (src.getGrade() <= this->getGradeToSign())
 		this->_signed = true;

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 13:45:13 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:51:36 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include <string>
@@ -20,7 +20,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string	_name;
@@ -29,13 +29,14 @@ class Form
 		const int			_gradeToExecute;
 
 	public:
-		~Form();
-		Form();
-		Form(std::string name, int gradeToSign, int gradeToExec);
-		Form(const Form &src);
-		Form	&operator=(const Form &src);
+		~AForm();
+		AForm();
+		AForm(std::string name, int gradeToSign, int gradeToExec);
+		AForm(const AForm &src);
+		AForm	&operator=(const AForm &src);
 
 		void	beSigned(const Bureaucrat &src);
+		virtual void	execute(const Bureaucrat &src) const;
 
 		std::string	getName() const;
 		bool		getSigned() const;
@@ -52,8 +53,13 @@ class Form
 			public:
 				virtual const char *what() const throw();
 		};
+		class SignedAlready : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
-std::ostream &operator<<(std::ostream &os, Form const &rhs);
+std::ostream &operator<<(std::ostream &os, AForm const &rhs);
 
 #endif
