@@ -6,19 +6,23 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 09:38:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/14 15:58:05 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:01:48 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-void	ignoreF(std::string &literal)
+void ignoreF(std::string &literal)
 {
 	if (literal.length() < 2)
-		return ;
-	if (literal == "inf" || literal == "+inf" || literal == "-inf")
-		return ;
-	if (literal.at(literal.length() - 1) == 'f')
+		return;
+	if (literal == "inff" || literal == "+inff" || literal == "-inff"
+			|| literal == "inf" || literal == "+inf" || literal == "-inf")
+	{
+		literal = literal.substr(0, literal.length() - 1);
+		return;
+	}
+	if (literal.back() == 'f' && literal.find('.') != std::string::npos)
 		literal = literal.substr(0, literal.length() - 1);
 }
 
