@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 09:38:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/14 16:01:48 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:03:40 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void ignoreF(std::string &literal)
 		literal = literal.substr(0, literal.length() - 1);
 		return;
 	}
-	if (literal.back() == 'f' && literal.find('.') != std::string::npos)
+	if (!literal.empty() && literal[literal.size() - 1] == 'f' && literal.find('.') != std::string::npos)
 		literal = literal.substr(0, literal.length() - 1);
 }
 
