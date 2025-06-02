@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:52:59 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/29 13:08:36 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/06/02 08:05:24 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ Base::~Base()
 
 Base	*generate(void)
 {
-	int randNum = 1 + (rand() % 3);
+	srand(time(0));
+	int randomNum = rand() % 4;
 
-	std::cout << randNum << std::endl;
-	if (randNum == 1)
+	if (randomNum == 1)
 	{
 		std::cout << "Base A created!" << std::endl;
 		return (new A());
 	}
-	else if (randNum == 2)
+	else if (randomNum == 2)
 	{
 		std::cout << "Base B created!" << std::endl;
 		return (new B());
 	}
-	else if (randNum == 3)
+	else if (randomNum == 3)
 	{
 		std::cout << "Base C created!" << std::endl;
 		return (new C());
@@ -56,5 +56,34 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
+	bool id = false;
+
+	if (!id)
+	{
+		A* a = dynamic_cast<A*>(&p);
+		if (a)
+		{
+			std::cout << "A" << std::endl;
+			id = true;
+		}
+	}
+	if (!id)
+	{
+		B* b = dynamic_cast<B*>(&p);
+		if (b)
+		{
+			std::cout << "B" << std::endl;
+			id = true;
+		}
+	}
+	if (!id)
+	{
+		C* c = dynamic_cast<C*>(&p);
+		if (c)
+		{
+			std::cout << "C" << std::endl;
+			id = true;
+		}
+	}
 	return ;
 }
