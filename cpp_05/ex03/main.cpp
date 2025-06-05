@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/28 17:46:37 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/06/03 11:13:33 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "Inter.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -37,25 +37,22 @@ int main(void)
 		std::cout << "3. Shrubbery Creation Form\n";
 		std::cout << "Enter your choice (1-3): ";
 		std::cin >> form_choice;
-
+		Intern intern;
 		AForm *n_form = NULL;
 		switch (form_choice)
 		{
-			case 1:
-				n_form = new PresidentialPardonForm("Target_Presidential");
+			case(1):
+				n_form = intern.makeForm("presidential form", sinput);
 				break;
-			case 2:
-				n_form = new RobotomyRequestForm("Target_Robotomy");
+			case(2):
+				n_form = intern.makeForm("robotomy request", sinput);
 				break;
-			case 3:
-				n_form = new ShrubberyCreationForm("Target_Shrubbery");
+			case(3):
+				n_form = intern.makeForm("shrubbery creation", sinput);
 				break;
 			default:
-				std::cout << "Invalid choice, using generic form.\n";
-				n_form = new AForm("new Form", 40, 30);
-				break;
+				std::cout << "invalid choice" << std::endl;
 		}
-
 		std::cout << "grade: " << n_b->getGrade() << std::endl;
 		n_b->signForm(*n_form);
 		n_form->execute(*n_b);

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/07 11:58:26 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:24:53 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 		Bureaucrat	n_b(sinput, intinput);
 
 		std::cout << "grade: " << n_b.getGrade() << std::endl;
-		n_b.decrementGrade(50000);
+		n_b.decrementGrade(5);
 	}
 	catch (const std::exception &e)
 	{

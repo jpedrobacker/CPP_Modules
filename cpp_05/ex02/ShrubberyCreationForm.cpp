@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:04:07 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 15:37:15 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:32:24 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "Shrubbery Form Destroyed!!!" << std::endl;
+	//std::cout << "Shrubbery Form Destroyed!!!" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery", 72, 45), _target("Default")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery", 145, 137), _target("Default")
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("Shrubbery", 72, 45), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("Shrubbery", 145, 137), _target(target)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src)

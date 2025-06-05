@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:32 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 13:45:09 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:26:57 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Form::~Form()
 {
-	std::cout << "Form Destroyed" << std::endl;
+	//std::cout << "Form Destroyed" << std::endl;
 }
 
 Form::Form() : _name("Default"), _signed(false), _gradeToSign(50), _gradeToExecute(50)
 {
-	std::cout << "Default constructor Form created" << std::endl;
+	//std::cout << "Default constructor Form created" << std::endl;
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExec)

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 15:50:36 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:42:09 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main(void)
 
 		std::cout << "grade: " << n_b->getGrade() << std::endl;
 		n_b->signForm(*n_form);
-		n_form->execute(*n_b);
+		//n_form->execute(*n_b);
 
 		delete n_form;
 		delete n_b;
