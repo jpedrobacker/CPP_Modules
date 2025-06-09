@@ -6,11 +6,11 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:03:54 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/28 17:46:22 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/06/03 11:00:17 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Inter.hpp"
+#include "Intern.hpp"
 
 Intern::~Intern()
 {}

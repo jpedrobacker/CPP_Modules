@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:42 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 16:03:25 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/06/03 11:16:20 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat: " << this->_name << " destroyed!" << std::endl;
+	//std::cout << "Bureaucrat: " << this->_name << " destroyed!" << std::endl;
 }
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(50)
 {
-	std::cout << "Default Bureaucrat created" << std::endl;
+	//std::cout << "Default Bureaucrat created" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src)
@@ -109,4 +109,10 @@ std::string	Bureaucrat::getName() const
 int	Bureaucrat::getGrade() const
 {
 	return this->_grade;
+}
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bur)
+{
+	os << bur.getName() << " has the following grade: " << bur.getGrade() << std::endl;
+	return os;
 }

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:42 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/08 18:48:05 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:07:34 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat: " << this->_name << " destroyed!" << std::endl;
+	//std::cout << "Bureaucrat: " << this->_name << " destroyed!" << std::endl;
 }
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(50)
 {
-	std::cout << "Default Bureaucrat created" << std::endl;
+	//std::cout << "Default Bureaucrat created" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src)
@@ -70,7 +70,7 @@ void	Bureaucrat::signForm(Form &src)
 	try
 	{
 		src.beSigned(*this);
-		std::cout << this->getName() << " Signed the forms " << src.getName() << std::endl;
+		std::cout << this->getName() << " Signed the form: " << src.getName() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
@@ -96,4 +96,10 @@ std::string	Bureaucrat::getName() const
 int	Bureaucrat::getGrade() const
 {
 	return this->_grade;
+}
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bur)
+{
+	os << bur.getName() << " has the following grade: " << bur.getGrade() << std::endl;
+	return os;
 }

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:51:32 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 16:03:49 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:44:44 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 AForm::~AForm()
 {
-	std::cout << "AForm Destroyed" << std::endl;
+	//std::cout << "AForm Destroyed" << std::endl;
 }
 
 AForm::AForm() : _name("Default"), _signed(false), _gradeToSign(50), _gradeToExecute(50)
 {
-	std::cout << "Default constructor AForm created" << std::endl;
+	//std::cout << "Default constructor AForm created" << std::endl;
 }
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExec)
@@ -48,15 +48,21 @@ void	AForm::beSigned(const Bureaucrat &src)
 	if (src.getGrade() <= this->getGradeToSign())
 		this->_signed = true;
 	else
+	{
+		std::cout << "To Sign ";
 		throw (AForm::GradeTooLowException());
+	}
 }
 
 void	AForm::execute(const Bureaucrat &executor) const
 {
+	if (executor.getGrade() > this->getGradeToExecute())
+	{
+		std::cout << "To Execute ";
+		throw (AForm::GradeTooLowException());
+	}
 	if (!this->getSigned())
 		throw (AForm::SignedAlready());
-	if (executor.getGrade() > this->getGradeToExecute())
-		throw (AForm::GradeTooLowException());
 }
 
 std::string	AForm::getName() const

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:58:26 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/07 11:53:13 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:07:05 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ class Bureaucrat
 				virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bur);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:04:02 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 15:45:40 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:32:42 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Robotomy Form Destroyed!!!" << std::endl;
+	//std::cout << "Robotomy Form Destroyed!!!" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 25, 5), _target("Default")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 72, 45), _target("Default")
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("Robotomy", 25, 5), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("Robotomy", 72, 45), _target(target)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm(src)

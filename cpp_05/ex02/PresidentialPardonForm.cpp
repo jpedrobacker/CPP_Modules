@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:03:56 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/12 13:48:57 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/05/20 13:30:38 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "Presidential Pardon Form Destroyed!!!" << std::endl;
+	//std::cout << "Presidential Pardon Form Destroyed!!!" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential", 25, 5), _target("Default")
