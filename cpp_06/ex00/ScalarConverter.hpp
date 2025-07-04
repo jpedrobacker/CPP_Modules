@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 09:15:35 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/14 12:55:33 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:59:51 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class ScalarConverter
 		~ScalarConverter();
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &src);
+		ScalarConverter &operator=(const ScalarConverter &src);
 
 	public:
 		static void convert(std::string &literal);

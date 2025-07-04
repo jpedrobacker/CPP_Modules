@@ -6,11 +6,28 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 09:38:29 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/05/14 16:03:40 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/07/04 19:12:56 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::~ScalarConverter()
+{}
+
+ScalarConverter::ScalarConverter()
+{}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &src)
+{
+	*this = src;
+}
+
+ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &src)
+{
+	if (this != &src) {}
+	return (*this);
+}
 
 void ignoreF(std::string &literal)
 {

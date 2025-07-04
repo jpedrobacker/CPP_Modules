@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:52:59 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/06/02 08:05:24 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:58:01 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	identify(Base *p)
 		std::cout << "Cannot identify Base pointer" << std::endl;
 }
 
+
+// tacar try catch aqui
 void	identify(Base &p)
 {
 	bool id = false;
