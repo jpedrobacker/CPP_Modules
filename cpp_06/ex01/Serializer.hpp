@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:29:33 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/07/04 19:12:26 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/07/21 14:12:19 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Serializer
 	public:
 		static uintptr_t	serialize(Data* ptr);
 		static Data*		deserialize(uintptr_t raw);
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:52:59 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/07/04 18:58:01 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/07/21 14:23:51 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,38 @@ void	identify(Base *p)
 		std::cout << "Cannot identify Base pointer" << std::endl;
 }
 
-
-// tacar try catch aqui
 void	identify(Base &p)
 {
-	bool id = false;
 
-	if (!id)
+	try
 	{
-		A* a = dynamic_cast<A*>(&p);
-		if (a)
-		{
-			std::cout << "A" << std::endl;
-			id = true;
-		}
+		A &a = dynamic_cast<A&>(p);
+		std::cout << "Found!!" << std::endl;
+		std::cout << "The Base pointer is a instance of A." << std::endl;
+		(void)a;
 	}
-	if (!id)
+	catch (const std::exception &e)
 	{
-		B* b = dynamic_cast<B*>(&p);
-		if (b)
+		try
 		{
-			std::cout << "B" << std::endl;
-			id = true;
+			B &b = dynamic_cast<B&>(p);
+			std::cout << "Found!!" << std::endl;
+			std::cout << "The Base pointer is a instance of B." << std::endl;
+			(void)b;
 		}
-	}
-	if (!id)
-	{
-		C* c = dynamic_cast<C*>(&p);
-		if (c)
+		catch (const std::exception &e)
 		{
-			std::cout << "C" << std::endl;
-			id = true;
+			try
+			{
+				C &c = dynamic_cast<C&>(p);
+				std::cout << "Found!!" << std::endl;
+				std::cout << "The Case pointer is a instance of C." << std::endl;
+				(void)c;
+			}
+			catch (const std::exception &e)
+			{
+				std::cout << "Invalid data type!" << std::endl;
+			}
 		}
 	}
 	return ;
