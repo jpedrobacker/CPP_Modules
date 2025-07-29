@@ -5,15 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 11:32:11 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/07/29 17:14:30 by jbergfel         ###   ########.fr       */
+/*   Created: 2025/07/29 17:11:48 by jbergfel          #+#    #+#             */
+/*   Updated: 2025/07/29 17:11:49 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
-
-int main(void)
-{
-	
-	return (0);
-}
