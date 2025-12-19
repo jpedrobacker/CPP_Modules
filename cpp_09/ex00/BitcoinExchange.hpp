@@ -5,33 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 17:12:47 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/07/29 17:45:40 by jbergfel         ###   ########.fr       */
+/*   Created: 2025/12/19 08:09:43 by jbergfel          #+#    #+#             */
+/*   Updated: 2025/12/19 08:10:11 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_HPP
-# define BITCOINEXCHANGE_HPP
+#pragma once
 
 # include <iostream>
-# include <map>
-# include <string>
 # include <fstream>
+# include <cstdlib>
+# include <string>
+# include <map>
 # include <exception>
 
 class BitcoinExchange
 {
 	private:
+		std::map<std::string, float> _data;
 		std::ifstream _csvFile;
 		std::ifstream _inputFile;
-		std::map<std::string, float> _data;
 
 	public:
-		~BitcoinExchange();
 		BitcoinExchange();
-		BitcoinExchange(const BitcoinExchange &src);
-		BitcoinExchange(const std::string file);
-		BitcoinExchange &operator=(const BitcoinExchange &src);
-};
+		BitcoinExchange(const std::string &databaseFile);
+		BitcoinExchange(const BitcoinExchange &other);
+		~BitcoinExchange();
 
-#endif
+		BitcoinExchange &operator=(const BitcoinExchange &other);
+
+		void parseCSV();
+		void readInputFile();
+		float getTargetValue(const std::string &targetDate);
+
+		class OpenFileErrorException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw() { return ("Error: could not open file."); };
+		};
+};
