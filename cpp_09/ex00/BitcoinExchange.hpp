@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 08:09:43 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/12/19 08:10:11 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/12/19 08:47:37 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ class BitcoinExchange
 		BitcoinExchange(const std::string &databaseFile);
 		BitcoinExchange(const BitcoinExchange &other);
 		~BitcoinExchange();
-
 		BitcoinExchange &operator=(const BitcoinExchange &other);
 
-		void parseCSV();
-		void readInputFile();
-		float getTargetValue(const std::string &targetDate);
+		void readCSV();
+		void readFile();
+		float getValue(const std::string &targetDate);
 
 		class OpenFileErrorException : public std::exception
 		{

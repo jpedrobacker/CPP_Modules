@@ -6,7 +6,7 @@
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 08:09:30 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/12/19 08:11:31 by jbergfel         ###   ########.fr       */
+/*   Updated: 2025/12/19 08:46:04 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ BitcoinExchange::BitcoinExchange(const std::string &filename)
 		throw (BitcoinExchange::OpenFileErrorException());
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) { *this = other; }
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
+{
+	*this = other;
+}
 
 BitcoinExchange::~BitcoinExchange()
 {
@@ -37,9 +40,11 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 	return (*this);
 }
 
-void BitcoinExchange::parseCSV()
+void BitcoinExchange::readCSV()
 {
-	std::string date, value, line;
+	std::string date;
+	std::string value;
+	std::string line;
 
 	while (std::getline(this->_csvFile, line))
 	{
@@ -54,29 +59,32 @@ static bool isLeapYear(int year)
 	return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
 }
 
-static bool isValidDate(const std::string &line)
+static bool checkDate(const std::string &line)
 {
+	std::string date;
+	int d;
+	int m;
+	int y;
+
 	if (line.length() != 10)
 		return (false);
-
-	std::string date = line.substr(0, 10);
+	date = line.substr(0, 10);
 	if (date[4] != '-' || date[7] != '-')
 		return (false);
-
-	int year = std::atoi(date.substr(0, 4).c_str());
-	int month = std::atoi(date.substr(5, 2).c_str());
-	if (month < 1 || month > 12)
+	y = std::atoi(date.substr(0, 4).c_str());
+	m = std::atoi(date.substr(5, 2).c_str());
+	if (m < 1 || m > 12)
 		return (false);
-	int day = std::atoi(date.substr(8, 2).c_str());
-	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	if (isLeapYear(year))
-		daysInMonth[1] = 29;
-	if (day < 1 || day > daysInMonth[month - 1])
+	d = std::atoi(date.substr(8, 2).c_str());
+	int lastDayM[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	if (isLeapYear(y))
+		lastDayM[1] = 29;
+	if (d < 1 || d > lastDayM[m - 1])
 		return (false);
 	return (true);
 }
 
-float BitcoinExchange::getTargetValue(const std::string &targetDate)
+float BitcoinExchange::getValue(const std::string &targetDate)
 {
 	std::map<std::string, float>::iterator it = this->_data.begin();
 	for (; it != this->_data.end(); it++)
@@ -90,9 +98,12 @@ float BitcoinExchange::getTargetValue(const std::string &targetDate)
 	return (it->second);
 }
 
-void BitcoinExchange::readInputFile()
+void BitcoinExchange::readFile()
 {
-	std::string line, date, str_value, delimiter;
+	std::string line;
+	std::string date;
+	std::string str_value;
+	std::string delimiter;
 	float value;
 	char *s;
 
@@ -102,7 +113,6 @@ void BitcoinExchange::readInputFile()
 		std::cerr << "Error: invalid input." << std::endl;
 		return;
 	}
-
 	while (getline(this->_inputFile, line))
 	{
 		if (line.empty())
@@ -115,18 +125,17 @@ void BitcoinExchange::readInputFile()
 			std::cerr << "Error: bad input> " << line << std::endl;
 			continue;
 		}
-
 		date = line.substr(0, 10);
 		str_value = line.substr(13);
 		value = std::strtof(str_value.c_str(), &s);
 		delimiter = line.substr(10, 3);
-		if (delimiter != " | " || !isValidDate(date) || *s != '\0')
+		if (delimiter != " | " || !checkDate(date) || *s != '\0')
 			std::cerr << "Error: bad input> " << line << std::endl;
 		else if (value < 0 || value > 1000)
 			std::cerr << "Error: value out of range> " << line << ". The number must be between 0 and 1000" << std::endl;
 		else
 		{
-			float targetValue = this->getTargetValue(date);
+			float targetValue = this->getValue(date);
 			if (targetValue == -1)
 				std::cerr << "Error: date not found> " << date << std::endl;
 			else
