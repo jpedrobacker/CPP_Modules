@@ -9,14 +9,12 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@mkdir obj/
-	@mv *.o obj/
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf obj/
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
