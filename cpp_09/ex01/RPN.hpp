@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbergfel <jbergfel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/21 19:09:05 by jbergfel          #+#    #+#             */
-/*   Updated: 2025/12/21 19:15:55 by jbergfel         ###   ########.fr       */
+/*   Created: 2025/12/21 19:10:50 by jbergfel          #+#    #+#             */
+/*   Updated: 2025/12/21 19:11:43 by jbergfel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
-#include <iostream>
+#pragma once
 
-int main(int ac, char **av)
+#include <stack>
+#include <string>
+
+class RPN
 {
-	if (ac != 2)
-	{
-		std::cerr << "Error: wrong number of arguments" << std::endl;
-		return (1);
-	}
+	private:
+		std::stack<int> _stack;
 
-	RPN calculator;
-	try
-	{
-		calculator.process(av[1]);
-		std::cout << calculator.getResult() << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
-	return (0);
-}
+	public:
+		RPN();
+		RPN(const RPN &other);
+		RPN &operator=(const RPN &other);
+		~RPN();
+
+		void process(const std::string& expression);
+		void applyOperation(const std::string& op);
+		int getResult() const;
+};
